@@ -1,3 +1,8 @@
+
+
+import 'package:e_commerce/views/cart_screen.dart';
+import 'package:e_commerce/views/favorite_screen.dart';
+import 'package:e_commerce/views/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -9,12 +14,22 @@ class BottomNavbar extends StatefulWidget {
 
 class _BottomNavbarState extends State<BottomNavbar> {
   int currentIndex = 2;
+  List screens = const [
+              Scaffold(),
+              FavoriteScreen(),
+              HomeScreen(),
+              CartScreen(),
+              Scaffold()
+            ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){
+          setState(() {
+            currentIndex = 2;
+          });
         },
         shape: const CircleBorder(),
         backgroundColor: const Color(0xffff660e),
@@ -36,41 +51,58 @@ class _BottomNavbarState extends State<BottomNavbar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+          setState(() {
+            currentIndex = 0;
+          });
+              }, 
               icon: Icon(
-                Icons.grid_view_outlined,
+                currentIndex == 0 ? Icons.grid_view_sharp : Icons.grid_view_outlined,
                 size: 30,
                 color: currentIndex == 0 ? Color(0xffff660e):Colors.grey.shade400,
                 )
                 ),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+          setState(() {
+            currentIndex = 1;
+          });
+              }, 
               icon: Icon(
-                Icons.favorite_border,
+                currentIndex == 1 ? Icons.favorite:Icons.favorite_border ,
                 size: 30,
                 color: currentIndex == 1 ? Color(0xffff660e):Colors.grey.shade400,
                 )
                 ),
                 SizedBox(width: 14),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+          setState(() {
+            currentIndex = 3;
+          });
+              }, 
               icon: Icon(
-                Icons.shopping_cart_outlined,
+                currentIndex == 3 ? Icons.shopping_cart : Icons.shopping_cart_outlined,
                 size: 30,
-                color: currentIndex == 2 ? Color(0xffff660e):Colors.grey.shade400,
+                color: currentIndex == 3 ? Color(0xffff660e):Colors.grey.shade400,
                 )
                 ),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+          setState(() {
+            currentIndex = 4;
+          });
+              }, 
               icon: Icon(
-                Icons.person,
+                currentIndex == 4 ? Icons.person : Icons.person_outline,
                 size: 30,
-                color: currentIndex == 3 ? Color(0xffff660e):Colors.grey.shade400,
+                color: currentIndex == 4 ? Color(0xffff660e):Colors.grey.shade400,
                 )
                 )
           ],
         ),
       ),
+      body: screens[currentIndex],
     );
   }
 }
