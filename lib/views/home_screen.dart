@@ -1,4 +1,5 @@
 import 'package:e_commerce/widget/home_app_bar.dart';
+import 'package:e_commerce/widget/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +16,13 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 35),
-              CustomAppBar()
+              CustomAppBar(),
+              SizedBox(height: 20),
+              CustomSearchBar(),
+              SizedBox(height: 20),
+              
+
+
             ],
           ),
         ),
