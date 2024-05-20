@@ -1,9 +1,9 @@
 import 'package:e_commerce/model/product.dart';
-import 'package:e_commerce/widget/category.dart';
-import 'package:e_commerce/widget/home_app_bar.dart';
-import 'package:e_commerce/widget/product_card.dart';
-import 'package:e_commerce/widget/search_bar.dart';
-import 'package:e_commerce/widget/slider_image.dart';
+import 'package:e_commerce/views/home/widget/category.dart';
+import 'package:e_commerce/views/home/widget/home_app_bar.dart';
+import 'package:e_commerce/views/home/widget/product_card.dart';
+import 'package:e_commerce/views/home/widget/search_bar.dart';
+import 'package:e_commerce/views/home/widget/slider_image.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

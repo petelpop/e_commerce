@@ -2,7 +2,7 @@
 
 import 'package:e_commerce/views/cart_screen.dart';
 import 'package:e_commerce/views/favorite_screen.dart';
-import 'package:e_commerce/views/home_screen.dart';
+import 'package:e_commerce/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavbar extends StatefulWidget {
