@@ -28,18 +28,22 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               const CustomSearchBar(),
               const SizedBox(height: 20),
-              ImageSlider(currentSlide: currentSlider, 
-              onChange: (value){
-                setState(() {
-                  currentSlider = value;
-                });
-              })
-
-
+              _imageSlider(),
+              SizedBox(height: 20),
+              
             ],
           ),
         ),
       ),
     );
+  }
+
+  ImageSlider _imageSlider() {
+    return ImageSlider(currentSlide: currentSlider, 
+            onChange: (value){
+              setState(() {
+                currentSlider = value;
+              });
+            });
   }
 }
