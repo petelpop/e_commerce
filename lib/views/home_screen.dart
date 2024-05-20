@@ -1,3 +1,4 @@
+import 'package:e_commerce/widget/category.dart';
 import 'package:e_commerce/widget/home_app_bar.dart';
 import 'package:e_commerce/widget/search_bar.dart';
 import 'package:e_commerce/widget/slider_image.dart';
@@ -30,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               _imageSlider(),
               SizedBox(height: 20),
-              
+              const Categories(),
+
             ],
           ),
         ),

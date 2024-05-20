@@ -19,6 +19,7 @@ class Categories extends StatelessWidget {
                 height: 65,
                 width: 65,
                 decoration: BoxDecoration(
+                  shape: BoxShape.circle,
                   image: DecorationImage(
                     image:AssetImage(categoriesList[index].image),
                     fit: BoxFit.cover 
