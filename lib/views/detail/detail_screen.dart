@@ -1,5 +1,6 @@
 import 'package:e_commerce/model/product.dart';
 import 'package:e_commerce/views/detail/widget/app_bar.dart';
+import 'package:e_commerce/views/detail/widget/description.dart';
 import 'package:e_commerce/views/detail/widget/image_slider.dart';
 import 'package:e_commerce/views/detail/widget/item_detail.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int currentImage = 0;
-  int currentColor = 0;
+  int currentColor = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   const SizedBox(height: 20),
                   _listColors(),
                   const SizedBox(height: 20),
+                  DetailDescription(text: widget.product.description)
                 ],
               ),
             )
