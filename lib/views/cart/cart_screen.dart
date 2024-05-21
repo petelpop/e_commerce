@@ -1,4 +1,5 @@
 import 'package:e_commerce/providers/cart_provider.dart';
+import 'package:e_commerce/views/cart/check_out.dart';
 import 'package:e_commerce/views/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,7 @@ class _CartScreenState extends State<CartScreen> {
     }
 
     return Scaffold(
+      bottomSheet: CheckOutBox(),
       backgroundColor: const Color(0xffF5F5F5),
       body: SafeArea(
           child: Column(
