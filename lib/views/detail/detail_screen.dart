@@ -1,9 +1,11 @@
 import 'package:e_commerce/model/product.dart';
+import 'package:e_commerce/views/detail/widget/addto_cart.dart';
 import 'package:e_commerce/views/detail/widget/app_bar.dart';
 import 'package:e_commerce/views/detail/widget/description.dart';
 import 'package:e_commerce/views/detail/widget/image_slider.dart';
 import 'package:e_commerce/views/detail/widget/item_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class DetailScreen extends StatefulWidget {
   final Product product;
@@ -21,17 +23,22 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF5F5F5),
+      floatingActionButton: AddToCart(product: widget.product),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: Column(
           children: [
             const DetailAppBar(),
-            DetailImageSlider(
-                onChange: (index) {
-                  setState(() {
-                    currentImage = index;
-                  });
-                },
-                image: widget.product.image),
+            Hero(
+              tag: widget.product.image,
+              child: DetailImageSlider(
+                  onChange: (index) {
+                    setState(() {
+                      currentImage = index;
+                    });
+                  },
+                  image: widget.product.image),
+            ),
             const SizedBox(height: 10),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
