@@ -2,6 +2,7 @@ import 'package:e_commerce/providers/cart_provider.dart';
 import 'package:e_commerce/views/cart/check_out.dart';
 import 'package:e_commerce/views/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -36,7 +37,7 @@ class _CartScreenState extends State<CartScreen> {
           child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.only(left: 15, top: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -54,10 +55,13 @@ class _CartScreenState extends State<CartScreen> {
                   },
                   icon: const Icon(Icons.arrow_back),
                 ),
-                const Text(
-                  "My Cart",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 25),
+                Padding(
+                  padding: EdgeInsets.only(right: 70),
+                  child: const Text(
+                    "My Cart",
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 25),
+                  ),
                 ),
                 Container(),
               ],

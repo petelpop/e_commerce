@@ -28,7 +28,7 @@ class _DetailScreenState extends State<DetailScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const DetailAppBar(),
+            DetailAppBar(product: widget.product),
             Hero(
               tag: widget.product.image,
               child: DetailImageSlider(

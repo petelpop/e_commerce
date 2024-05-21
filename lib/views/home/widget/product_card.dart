@@ -1,4 +1,5 @@
 import 'package:e_commerce/model/product.dart';
+import 'package:e_commerce/providers/favorite_provider.dart';
 import 'package:e_commerce/views/detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,8 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
+
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailScreen(product: product)));
@@ -86,10 +89,10 @@ class ProductCard extends StatelessWidget {
               ),
               child: GestureDetector(
                 onTap:() {
-
+                  provider.toggleFavorite(product);
                 },
-                child: const Icon(
-                  Icons.favorite_border,
+                child: Icon(
+                  provider.isExist(product)? Icons.favorite : Icons.favorite_border,
                   color: Colors.white,
                   size: 22,
                   )

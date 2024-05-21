@@ -1,4 +1,5 @@
 import 'package:e_commerce/providers/cart_provider.dart';
+import 'package:e_commerce/providers/favorite_provider.dart';
 import 'package:e_commerce/views/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => CartProvider())
+      ChangeNotifierProvider(create: (_) => CartProvider()),
+      ChangeNotifierProvider(create: (_) => FavoriteProvider())
     ],
     child: MaterialApp(
       title: 'E Commerce App',
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const BottomNavbar(),
+      debugShowCheckedModeBanner: false,
     )
   );
   
